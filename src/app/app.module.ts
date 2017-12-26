@@ -3,14 +3,18 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+//import { NeutronRatingComponent } from './modules/neutron-rating/neutron-rating.component';
+import { NeutronRatingModule } from './modules/neutron-rating/neutron-rating.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    //NeutronRatingComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NeutronRatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
