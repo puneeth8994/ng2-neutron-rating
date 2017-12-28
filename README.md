@@ -67,7 +67,9 @@ public onRatingClicked = (ratingNumICanUseInMyComponent) => {
 
 **Step 1** - Add an additional attribute to change the number of stars
 
-- ![#f03c15] `If your rating exceeds the number of stars, your rating would be equal to the number of stars`
+```diff
+- Warning - If your rating exceeds the number of stars, your rating would be equal to the number of stars
+```
 
 ```html
 <neutron-rating [rating]='4' [starColour]="'#FDD835'" [starSize]="4" (ratingClicked)='onRatingClicked($event)'></neutron-rating>
