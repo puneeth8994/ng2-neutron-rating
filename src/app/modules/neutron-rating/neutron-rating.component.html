@@ -1,9 +1,10 @@
-<div class="crop" 
-[title]="rating">
-<div [style.font-size.em]="starSize">
+<div class="crop" [title]="rating?rating:''">
+  <div [style.font-size.em]="starSize?starSize:1">
     <div>
-      <span *ngFor="let singleRating of ratingArr; let i = index"><a [style.color]="starColour?starColour:'red'" (click)="passNewRating(i+1)">{{singleRating}}</a></span>
+      <span *ngFor="let singleRating of ratingArr; let i = index">
+        <a [style.color]="starColour?starColour:'yellow'" (click)="passNewRating(i+1)">{{singleRating}}</a>
+      </span>
     </div>
+  </div>
 </div>
-
-</div>
+<!-- <fa name="star" style="color: #FDD835; font-size: 4em;"></fa> -->
