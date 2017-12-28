@@ -1,6 +1,6 @@
 {
   "name": "neutron-star-rating",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -25,6 +25,10 @@
     "core-js": "^2.4.1",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/puneeth8994/ng2-neutron-rating.git"
   },
   "devDependencies": {
     "@angular/cli": "1.6.1",

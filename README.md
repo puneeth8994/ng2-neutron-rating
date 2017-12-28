@@ -4,7 +4,7 @@ Built on angular 5, star rating library. Can be used for your angular applicatio
 
 ## How to Use
 
-Step 1 - Import in your app module
+**Step 1** - Import in your app module
 
 ```js
 import { NeutronRatingModule } from 'neutron-star-rating';
@@ -23,7 +23,7 @@ import { NeutronRatingModule } from 'neutron-star-rating';
 export class AppModule { }
 ```
 
-Step 2 - Include it in your component
+**Step 2** - Include it in your component
 
 ```js
 import { NeutronRatingModule } from 'neutron-star-rating';
@@ -36,8 +36,29 @@ import { NeutronRatingModule } from 'neutron-star-rating';
 })
 ```
 
-Step 3 - Start using it in your HTML
+**Step 3** - Start using it in your HTML
 
 ```html
 <neutron-rating [rating]='4' [starColour]="'#FDD835'" [starSize]="4"></neutron-rating>
+```
+
+
+## Additional Functions
+
+* Passing the new rating to your component
+
+**Step 1** - Add an additional attribute to detect the rating clicked in your html.
+
+```html
+<neutron-rating [rating]='4' [starColour]="'#FDD835'" [starSize]="4" (ratingClicked)='onRatingClicked($event)'></neutron-rating>
+```
+
+**Step 2** - Create a function such as onRatingClicked and retrieve the rating from there
+
+```js
+public onRatingClicked = (ratingNumICanUseInMyComponent) => {
+
+  console.log("my new rating that I can use in my component is ");
+  console.log(ratingNumICanUseInMyComponent);
+}
 ```
