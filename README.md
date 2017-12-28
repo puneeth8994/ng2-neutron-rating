@@ -65,7 +65,7 @@ public onRatingClicked = (ratingNumICanUseInMyComponent) => {
 
 * Passing the new rating to your component
 
-**Step 1** - Add an additional attribute to change the number of stars
+**Step 1** - Add an additional attribute (starNum) to change the number of stars
 
 ```diff
 - Warning - If your rating exceeds the number of stars, your rating would be equal to the number of stars
