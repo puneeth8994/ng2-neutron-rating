@@ -72,5 +72,5 @@ public onRatingClicked = (ratingNumICanUseInMyComponent) => {
 ```
 
 ```html
-<neutron-rating [rating]='4' [starColour]="'#FDD835'" [starSize]="4" (ratingClicked)='onRatingClicked($event)'></neutron-rating>
+<neutron-rating [rating]='4' [starColour]="'#FDD835'" [starSize]="4" (ratingClicked)='onRatingClicked($event)' [starNum]="10"></neutron-rating>
 ```
