@@ -45,7 +45,7 @@ import { NeutronRatingModule } from 'neutron-star-rating';
 
 ## Additional Functions
 
-* Passing the new rating to your component
+## 1) Passing the new rating to your component
 
 **Step 1** - Add an additional attribute to detect the rating clicked in your html.
 
@@ -63,7 +63,7 @@ public onRatingClicked = (ratingNumICanUseInMyComponent) => {
 }
 ```
 
-* Passing the new rating to your component
+## 2)Change the number of stars
 
 **Step 1** - Add an additional attribute (starNum) to change the number of stars
 

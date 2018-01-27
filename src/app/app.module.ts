@@ -1,10 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 import { AppComponent } from './app.component';
-//import { NeutronRatingComponent } from './modules/neutron-rating/neutron-rating.component';
 import { NeutronRatingModule } from './modules/neutron-rating/neutron-rating.module';
 
 
@@ -15,8 +13,7 @@ import { NeutronRatingModule } from './modules/neutron-rating/neutron-rating.mod
   ],
   imports: [
     BrowserModule,
-    NeutronRatingModule,
-    AngularFontAwesomeModule
+    NeutronRatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

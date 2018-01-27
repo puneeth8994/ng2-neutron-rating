@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, EventEmitter, Output, HostListener } from '@angular/core';
 
 @Component({
   selector: 'neutron-rating',
@@ -14,6 +14,8 @@ export class NeutronRatingComponent implements OnInit {
 
   public starWidth: number;
   public ratingArr: any = []
+  public existingRatingArr = [];
+  public initialHoveredRating;
   @Input() rating: number;
   @Input() starSize: number;
   @Input() starColour: any;
@@ -56,6 +58,8 @@ export class NeutronRatingComponent implements OnInit {
       this.ratingArr.push(this.emptyIcon)
     }
 
+    this.existingRatingArr = this.ratingArr;
+
     console.log(this.ratingArr);
   }
 
@@ -69,7 +73,7 @@ export class NeutronRatingComponent implements OnInit {
 
     this.rating = newRating;
 
-    console.log("new rating is " + newRating);
+    //console.log("new rating is " + newRating);
 
     this.ratingArr = [];
 
@@ -87,6 +91,51 @@ export class NeutronRatingComponent implements OnInit {
 
     this.ratingClicked.emit(newRating)
 
+    this.existingRatingArr = this.ratingArr;
+
+  }
+
+  public onHoverEvent: any = (hoveredRating) => {
+
+    let numberOfStars = (this.starNum) ? this.starNum : 5;
+
+    this.ratingArr = [];
+
+    for (let i = 0; i < hoveredRating; i++) {
+
+      this.ratingArr.push(this.fullIcon);
+    }
+
+    let ratingLeft = numberOfStars - hoveredRating;
+
+    for (let j = 0; j < ratingLeft; j++) {
+
+      this.ratingArr.push(this.emptyIcon)
+    }
+
+    this.initialHoveredRating = hoveredRating;
+
+  }
+
+  // @HostListener('mouseenter') onMouseEnter(something) {
+    
+  //   console.log("bla bla is "+something);
+  // }
+
+  public changeHovered: any = (a) => {
+
+    //console.log("moving 1");
+    //console.log(a);
+  }
+
+  public overStars = ($event) => {
+
+  }
+
+
+  public onHoverExitEvent: any = () => {
+
+    this.ratingArr = this.existingRatingArr;
   }
 
 }

@@ -1,6 +1,6 @@
 {
   "name": "neutron-star-rating",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -16,7 +16,14 @@
     "AngularJs 5",
     "Star rating",
     "Module",
-    "angular 5 star rating library"
+    "angular 5 star rating library",
+    "ng",
+    "ng-star-rating",
+    "angular-star-rating",
+    "angular",
+    "angular-4",
+    "ng-rating",
+    "star-rating-library"
   ],
   "dependencies": {
     "@angular/animations": "^5.0.0",
@@ -28,7 +35,6 @@
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
-    "angular-font-awesome": "^3.1.1",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
     "rxjs": "^5.5.2",
