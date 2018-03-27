@@ -1,4 +1,4 @@
-<div class="crop" [title]="rating?rating:''" (mouseleave)="onHoverExitEvent()">
+<div class="crop" [ngClass]="{'clickable': !readOnly}" [title]="rating?rating:''" (mouseleave)="onHoverExitEvent()">
   <div [style.font-size.em]="starSize?starSize:1">
     <div>
       <span *ngFor="let singleRating of ratingArr; let i = index">
