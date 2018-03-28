@@ -20,6 +20,7 @@ export class NeutronRatingComponent implements OnInit {
   @Input() starSize: number;
   @Input() starColour: any;
   @Input() starNum: number;
+  @Input() readOnly: boolean;
 
   @Output() ratingClicked: EventEmitter<number> =
     new EventEmitter<number>()
@@ -65,60 +66,64 @@ export class NeutronRatingComponent implements OnInit {
 
   public passNewRating: any = (newRating) => {
 
-    let numberOfStars = (this.starNum) ? this.starNum : 5;
+    if (!this.readOnly) {
+      let numberOfStars = (this.starNum) ? this.starNum : 5;
 
-    newRating = (newRating > numberOfStars) ? numberOfStars : newRating;
+      newRating = (newRating > numberOfStars) ? numberOfStars : newRating;
 
-    newRating = Math.floor(newRating);
+      newRating = Math.floor(newRating);
 
-    this.rating = newRating;
+      this.rating = newRating;
 
-    //console.log("new rating is " + newRating);
+      //console.log("new rating is " + newRating);
 
-    this.ratingArr = [];
+      this.ratingArr = [];
 
-    for (let i = 0; i < newRating; i++) {
+      for (let i = 0; i < newRating; i++) {
 
-      this.ratingArr.push(this.fullIcon);
+        this.ratingArr.push(this.fullIcon);
+      }
+
+      let ratingLeft = numberOfStars - newRating;
+
+      for (let j = 0; j < ratingLeft; j++) {
+
+        this.ratingArr.push(this.emptyIcon)
+      }
+
+      this.ratingClicked.emit(newRating)
+
+      this.existingRatingArr = this.ratingArr;
     }
-
-    let ratingLeft = numberOfStars - newRating;
-
-    for (let j = 0; j < ratingLeft; j++) {
-
-      this.ratingArr.push(this.emptyIcon)
-    }
-
-    this.ratingClicked.emit(newRating)
-
-    this.existingRatingArr = this.ratingArr;
-
+    return;
   }
 
   public onHoverEvent: any = (hoveredRating) => {
 
-    let numberOfStars = (this.starNum) ? this.starNum : 5;
+    if (!this.readOnly) {
+      let numberOfStars = (this.starNum) ? this.starNum : 5;
 
-    this.ratingArr = [];
+      this.ratingArr = [];
 
-    for (let i = 0; i < hoveredRating; i++) {
+      for (let i = 0; i < hoveredRating; i++) {
 
-      this.ratingArr.push(this.fullIcon);
+        this.ratingArr.push(this.fullIcon);
+      }
+
+      let ratingLeft = numberOfStars - hoveredRating;
+
+      for (let j = 0; j < ratingLeft; j++) {
+
+        this.ratingArr.push(this.emptyIcon)
+      }
+
+      this.initialHoveredRating = hoveredRating;
     }
-
-    let ratingLeft = numberOfStars - hoveredRating;
-
-    for (let j = 0; j < ratingLeft; j++) {
-
-      this.ratingArr.push(this.emptyIcon)
-    }
-
-    this.initialHoveredRating = hoveredRating;
-
+    return;
   }
 
   // @HostListener('mouseenter') onMouseEnter(something) {
-    
+
   //   console.log("bla bla is "+something);
   // }
 

@@ -1,6 +1,6 @@
 .crop {
   overflow: hidden;
 }
-div {
+.clickable {
   cursor: pointer;
 }
