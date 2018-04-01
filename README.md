@@ -74,3 +74,15 @@ public onRatingClicked = (ratingNumICanUseInMyComponent) => {
 ```html
 <neutron-rating [rating]='4' [starColour]="'#FDD835'" [starSize]="4" (ratingClicked)='onRatingClicked($event)' [starNum]="10"></neutron-rating>
 ```
+
+## 2)Make the stars only readable
+
+**Step 1** - Add an additional attribute (readOnly) to make the stars only readable after initializing it with a value
+
+```diff
+- Wearning - You won't be able to change the rating once the readOnly attribute is set to true
+```
+
+```html
+<neutron-rating [rating]='4' [starColour]="'#FDD835'" [readOnly]="true" [starSize]="4" (ratingClicked)='onRatingClicked($event)' [starNum]="10"></neutron-rating>
+```
